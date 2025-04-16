@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teşekkürler - Kayseri Satranç Ustalar Kulübü</title>
+    <meta name="description" content="Kayseri Satranç Ustalar Kulübü - Form gönderiminiz için teşekkür ederiz.">
+    <meta name="keywords" content="satranç kulübü teşekkür, başvuru sonuç, teşekkür sayfası">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <header class="wp_mainHeader">
+        <div class="wp_headerContainer">
+            <div class="wp_logoContainer">
+                <a href="index.html">
+                    <h1>Kayseri Satranç Ustalar Kulübü</h1>
+                </a>
+            </div>
+            <nav class="wp_mainNav">
+                <button class="wp_navbarToggler">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="wp_navbarCollapse">
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="about.html">Hakkımızda</a></li>
+                    <li><a href="privacy.html">Gizlilik Politikası</a></li>
+                    <li><a href="cookies.html">Çerezler</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Thank You Section -->
+    <section class="wp_thankYouSection">
+        <div class="wp_thankYouContainer">
+            <div class="wp_thankYouContent">
+                <div class="wp_thankYouIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+                <h2>Teşekkürler!</h2>
+                <p class="wp_thankYouMessage">Mesajınız başarıyla gönderildi. En kısa sürede size geri dönüş yapacağız.</p>
+                <div class="wp_thankYouDetails">
+                    <h3>Bize Ulaşın</h3>
+                    <p>Sorularınız veya daha fazla bilgi için:</p>
+                    <div class="wp_thankYouContact">
+                        <p><strong>Telefon:</strong> +90 352 123 4567</p>
+                        <p><strong>E-posta:</strong> info@games-meplay.com</p>
+                        <p><strong>Adres:</strong> Tacettin Veli, Kartal Blv. No:74, 38200 Melikgazi/Kayseri, Türkiye</p>
+                    </div>
+                </div>
+                <div class="wp_thankYouActions">
+                    <a href="index.html" class="wp_thankYouButton wp_homePage">Ana Sayfaya Dön</a>
+                    <a href="index.html#membership" class="wp_thankYouButton wp_secondary">Üyelik Sayfasına Dön</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="wp_mainFooter">
+        <div class="wp_footerContainer">
+            <div class="wp_footerInfo">
+                <div class="wp_footerLogo">
+                    <h3>Kayseri Satranç Ustalar Kulübü</h3>
+                </div>
+                <p>Stratejik düşüncenin ve zihinsel gelişimin merkezi.</p>
+            </div>
+            <div class="wp_footerNav">
+                <h4>Hızlı Erişim</h4>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="about.html">Hakkımızda</a></li>
+                    <li><a href="privacy.html">Gizlilik Politikası</a></li>
+                    <li><a href="cookies.html">Çerezler</a></li>
+                </ul>
+            </div>
+            <div class="wp_footerContact">
+                <h4>İletişim Bilgileri</h4>
+                <div class="wp_footerContactInfo">
+                    <p><strong>Adres:</strong> Tacettin Veli, Kartal Blv. No:74, 38200 Melikgazi/Kayseri, Türkiye</p>
+                    <p><strong>Telefon:</strong> +90 352 123 4567</p>
+                    <p><strong>E-posta:</strong> info@games-meplay.com</p>
+                </div>
+            </div>
+        </div>
+        <div class="wp_footerBottom">
+            <div class="wp_sectionContainer">
+                <p class="wp_copyright">Copyright ©2025 Kayseri Satranç Ustalar Kulübü. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div class="wp_cookieBanner" id="wp_cookieBanner">
+        <div class="wp_cookieContent">
+            <p>Bu web sitesi deneyiminizi geliştirmek için çerezleri kullanır. Bu siteyi ziyaret etmeye devam ederek çerezlerin kullanımını kabul etmiş olursunuz. Daha fazla bilgi için, <a href="cookies.html" target="_blank" class="wp_cookieLink">buraya tıklayın</a>.</p>
+        </div>
+        <div class="wp_cookieActions">
+            <button class="wp_cookieButton" id="wp_acceptCookies">Kabul Et</button>
+        </div>
+    </div>
+
+    <!-- Custom JS for Mobile Menu and Cookie Banner -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const navbarToggler = document.querySelector('.wp_navbarToggler');
+            const navbarCollapse = document.querySelector('.wp_navbarCollapse');
+            navbarToggler.addEventListener('click', function () {
+                navbarCollapse.classList.toggle('wp_show');
+            });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const cookieBanner = document.getElementById('wp_cookieBanner');
+            const acceptButton = document.getElementById('wp_acceptCookies');
+            if (!localStorage.getItem('cookiesAccepted')) {
+                cookieBanner.classList.add('wp_show');
+            }
+            acceptButton.addEventListener('click', function () {
+                localStorage.setItem('cookiesAccepted', 'true');
+                cookieBanner.classList.remove('wp_show');
+            });
+        });
+
+        // Auto-redirect after a specific time (optional)
+        // setTimeout(function() {
+        //     window.location.href = "index.html";
+        // }, 10000); // Redirect after 10 seconds
+    </script>
+</body>
+</html>

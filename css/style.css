@@ -1,0 +1,2140 @@
+/* Основные стили и настройки */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #c0392b;
+    --accent-color: #f39c12;
+    --light-color: #ecf0f1;
+    --dark-color: #2c3e50;
+    --text-color: #333;
+    --bg-light: #f8f9fa;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--border-radius);
+}
+
+.wp_sectionContainer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.wp_sectionTitle {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: var(--primary-color);
+    position: relative;
+}
+
+.wp_sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent-color);
+}
+
+/* Header Styles */
+.wp_mainHeader {
+    background-color: var(--primary-color);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wp_headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.wp_logoContainer a {
+    color: var(--light-color);
+}
+
+.wp_logoContainer h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--light-color);
+}
+
+.wp_mainNav {
+    display: flex;
+    align-items: center;
+}
+
+.wp_navbarCollapse {
+    display: flex;
+    gap: 25px;
+}
+
+.wp_navbarCollapse li a {
+    color: var(--light-color);
+    font-weight: 500;
+    padding: 5px 3px;
+    position: relative;
+}
+
+.wp_navbarCollapse li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+.wp_navbarCollapse li a:hover::after,
+.wp_navbarCollapse li a.wp_active::after {
+    width: 100%;
+}
+
+.wp_navbarToggler {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.wp_navbarToggler span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--light-color);
+    margin: 5px 0;
+    transition: transform 0.3s ease;
+}
+
+/* Hero Section */
+.wp_heroSection {
+    height: 80vh;
+    min-height: 500px;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('../img/hero.webp') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-color);
+    position: relative;
+    text-align: center;
+}
+
+.wp_heroOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.wp_heroContent {
+    max-width: 800px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.wp_heroContent h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1s ease-out;
+}
+
+.wp_heroContent p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease-out;
+}
+
+.wp_heroButton {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.wp_heroButton:hover {
+    background-color: #e67e22;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Events Section */
+.wp_eventsSection {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.wp_eventsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.wp_eventCard {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    display: flex;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wp_eventCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.wp_eventDate {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+}
+
+.wp_eventDay {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.wp_eventMonth {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.wp_eventDetails {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.wp_eventDetails h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.wp_eventTime {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #666;
+    display: flex;
+    align-items: center;
+}
+
+.wp_clockIcon {
+    margin-right: 5px;
+}
+
+/* Features Section */
+.wp_featuresSection {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.wp_featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.wp_featureItem {
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+.wp_featureItem:hover {
+    transform: translateY(-10px);
+}
+
+.wp_featureIcon {
+    margin: 0 auto 20px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-light);
+    border-radius: 50%;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.wp_featureItem:hover .wp_featureIcon {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.wp_featureItem h3 {
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+/* About Section */
+.wp_aboutSection {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.wp_aboutContent {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.wp_aboutText {
+    flex: 1 1 500px;
+}
+
+.wp_aboutText p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.wp_aboutImage {
+    flex: 1 1 400px;
+    position: relative;
+}
+
+.wp_aboutImage img {
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.wp_aboutImage:hover img {
+    transform: scale(1.02);
+}
+
+.wp_aboutButton {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 25px;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.wp_aboutButton:hover {
+    background-color: var(--accent-color);
+}
+
+/* Game Info Section */
+.wp_gameInfoSection {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.wp_gameInfoContent {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.wp_gameInfoImage {
+    flex: 1 1 400px;
+    order: 1;
+}
+
+.wp_gameInfoText {
+    flex: 1 1 500px;
+    order: 2;
+}
+
+.wp_gameInfoText p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.wp_gameStats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    gap: 20px;
+}
+
+.wp_gameStat {
+    text-align: center;
+    flex: 1;
+    padding: 20px;
+    border-radius: var(--border-radius);
+    background-color: var(--bg-light);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.wp_gameStat:hover {
+    transform: translateY(-5px);
+}
+
+.wp_gameStat span {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.wp_gameStat p {
+    margin-bottom: 0;
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Membership Section */
+.wp_membershipSection {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.wp_membershipContent {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.wp_membershipInfo {
+    flex: 1 1 400px;
+}
+
+.wp_membershipInfo h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.wp_membershipList {
+    list-style: none;
+    padding: 0;
+}
+
+.wp_membershipList li {
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.wp_membershipList li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.wp_membershipForm {
+    flex: 1 1 500px;
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.wp_membershipForm h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.wp_formGroup {
+    margin-bottom: 20px;
+}
+
+.wp_formGroup label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.wp_formGroup input,
+.wp_formGroup select,
+.wp_formGroup textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.wp_formGroup input:focus,
+.wp_formGroup select:focus,
+.wp_formGroup textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+.wp_submitButton {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.wp_submitButton:hover {
+    background-color: #e67e22;
+}
+
+/* Ratings Section */
+.wp_ratingsSection {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.wp_ratingsContent {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.wp_overallRating {
+    flex: 1 1 400px;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.wp_ratingScore {
+    flex: 1 1 120px;
+    text-align: center;
+}
+
+.wp_ratingScore span {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    display: block;
+}
+
+.wp_ratingStars {
+    margin: 10px 0;
+    color: var(--accent-color);
+    font-size: 1.3rem;
+}
+
+.wp_ratingBars {
+    flex: 2 1 250px;
+}
+
+.wp_ratingBar {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.wp_ratingBar span {
+    flex: 0 0 40px;
+}
+
+.wp_barContainer {
+    flex: 1;
+    height: 12px;
+    background-color: #eee;
+    border-radius: 10px;
+    margin: 0 10px;
+    overflow: hidden;
+}
+
+.wp_barFill {
+    height: 100%;
+    background-color: var(--accent-color);
+    border-radius: 10px;
+}
+
+.wp_popularityStats {
+    flex: 1 1 400px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.wp_statItem {
+    padding: 20px;
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.wp_statItem:hover {
+    transform: translateY(-5px);
+}
+
+.wp_statItem h3 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.wp_statItem p {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Testimonial Section */
+.wp_testimonialSection {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.wp_testimonialSlider {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.wp_testimonialItem {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.wp_testimonialItem:hover {
+    transform: translateY(-5px);
+}
+
+.wp_testimonialQuote {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding: 0 20px;
+}
+
+.wp_testimonialQuote::before,
+.wp_testimonialQuote::after {
+    content: '"';
+    font-size: 3rem;
+    color: var(--accent-color);
+    opacity: 0.3;
+    position: absolute;
+}
+
+.wp_testimonialQuote::before {
+    top: -20px;
+    left: -10px;
+}
+
+.wp_testimonialQuote::after {
+    bottom: -40px;
+    right: -10px;
+}
+
+.wp_testimonialAuthor {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.wp_testimonialAuthor img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.wp_testimonialAuthor h4 {
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+.wp_testimonialAuthor p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.wp_testimonialDots {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 10px;
+}
+
+.wp_dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.wp_dot.wp_active {
+    background-color: var(--accent-color);
+}
+
+/* Contact Section */
+.wp_contactSection {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.wp_contactContent {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.wp_contactInfo {
+    flex: 1 1 400px;
+}
+
+.wp_contactItem {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.wp_contactIcon {
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-light);
+    border-radius: 50%;
+    color: var(--primary-color);
+}
+
+.wp_openHours p {
+    margin-bottom: 5px;
+}
+
+.wp_contactForm {
+    flex: 1 1 500px;
+    background-color: var(--bg-light);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+/* Стили для подвала (footer) сайта */
+
+/* Основные стили подвала */
+.wp_mainFooter {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding-top: 50px;
+    margin-top: 50px;
+    position: relative;
+}
+
+.wp_footerContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 30px;
+}
+
+/* Информационный блок подвала */
+.wp_footerInfo {
+    flex: 1 1 300px;
+}
+
+.wp_footerLogo h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #f39c12;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.wp_footerLogo h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #f39c12;
+    transition: width 0.3s ease;
+}
+
+.wp_footerLogo h3:hover::after {
+    width: 100%;
+}
+
+.wp_footerInfo p {
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* Навигация в подвале */
+.wp_footerNav {
+    flex: 1 1 200px;
+}
+
+.wp_footerNav h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #f39c12;
+}
+
+.wp_footerNav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.wp_footerNav ul li {
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.wp_footerNav ul li:hover {
+    transform: translateX(5px);
+}
+
+.wp_footerNav ul li a {
+    color: #ecf0f1;
+    opacity: 0.9;
+    transition: opacity 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.wp_footerNav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #f39c12;
+    transition: width 0.3s ease;
+}
+
+.wp_footerNav ul li a:hover {
+    opacity: 1;
+    color: #f39c12;
+}
+
+.wp_footerNav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Контакты в подвале */
+.wp_footerContact {
+    flex: 1 1 300px;
+}
+
+.wp_footerContact h4 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #f39c12;
+}
+
+.wp_footerContactInfo p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.wp_footerContactInfo strong {
+    color: #f39c12;
+    font-weight: 600;
+}
+
+/* Нижняя часть подвала */
+.wp_footerBottom {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 15px 0;
+}
+
+.wp_copyright {
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Стили для cookie-баннера */
+.wp_cookieBanner {
+    position: fixed;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(44, 62, 80, 0.95);
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    transition: bottom 0.5s ease-in-out;
+}
+
+.wp_cookieBanner.wp_show {
+    bottom: 0;
+}
+
+.wp_cookieContent {
+    flex: 1 1 60%;
+}
+
+.wp_cookieContent p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.wp_cookieLink {
+    color: #f39c12;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.wp_cookieLink:hover {
+    color: #fff;
+}
+
+.wp_cookieActions {
+    flex: 0 1 auto;
+}
+
+.wp_cookieButton {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.wp_cookieButton:hover {
+    background-color: #e67e22;
+    transform: translateY(-2px);
+}
+
+.wp_cookieButton:active {
+    transform: translateY(0);
+}
+
+/* Анимации для подвала */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.wp_footerInfo,
+.wp_footerNav,
+.wp_footerContact {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.wp_footerNav {
+    animation-delay: 0.2s;
+}
+
+.wp_footerContact {
+    animation-delay: 0.4s;
+}
+
+/* Адаптивные стили для подвала */
+@media screen and (max-width: 992px) {
+    .wp_footerLogo h3 {
+        font-size: 1.6rem;
+    }
+
+    .wp_footerNav h4,
+    .wp_footerContact h4 {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wp_footerContainer {
+        flex-direction: column;
+        gap: 30px;
+        padding-bottom: 20px;
+    }
+
+    .wp_footerInfo,
+    .wp_footerNav,
+    .wp_footerContact {
+        flex: 1 1 100%;
+    }
+
+    .wp_cookieBanner {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .wp_cookieContent {
+        flex: 1 1 100%;
+        margin-bottom: 15px;
+    }
+
+    .wp_cookieButton {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .wp_mainFooter {
+        padding-top: 40px;
+        margin-top: 40px;
+    }
+
+    .wp_footerInfo,
+    .wp_footerNav,
+    .wp_footerContact {
+        padding: 0 10px;
+    }
+
+    .wp_footerLogo h3 {
+        font-size: 1.4rem;
+    }
+
+    .wp_footerContainer {
+        gap: 25px;
+    }
+}
+
+/* Дополнительные визуальные эффекты */
+.wp_mainFooter::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 0;
+    right: 0;
+    height: 15px;
+    background: linear-gradient(45deg, transparent 33.33%, #2c3e50 33.33%, #2c3e50 66.66%, transparent 66.66%), linear-gradient(-45deg, transparent 33.33%, #2c3e50 33.33%, #2c3e50 66.66%, transparent 66.66%);
+    background-size: 30px 30px;
+    background-position: 0 0;
+}
+
+/* Дополнительные стили для страницы "О нас" */
+
+/* Hero секция для внутренних страниц */
+.wp_innerHeroSection {
+    height: 50vh;
+    min-height: 300px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url('../img/6.webp') no-repeat center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-color);
+    position: relative;
+    text-align: center;
+}
+
+/* История секция */
+.wp_historySection {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.wp_historyContent {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.wp_historyImage {
+    flex: 1 1 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.wp_historyImage img {
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.wp_historyImage:hover img {
+    transform: scale(1.05);
+}
+
+.wp_historyText {
+    flex: 1 1 500px;
+}
+
+.wp_historyText p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* Миссия секция */
+.wp_missionSection {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.wp_missionContent {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.wp_missionText {
+    flex: 1 1 500px;
+}
+
+.wp_missionText p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.wp_missionImage {
+    flex: 1 1 400px;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.wp_missionImage img {
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.wp_missionImage:hover img {
+    transform: scale(1.05);
+}
+
+.wp_missionList {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.wp_missionList li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.wp_missionList li::before {
+    content: "•";
+    color: var(--accent-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* Команда секция */
+.wp_teamSection {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.wp_teamGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.wp_teamMember {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.wp_teamMember:hover {
+    transform: translateY(-10px);
+}
+
+.wp_teamImage {
+    height: 280px;
+    overflow: hidden;
+}
+
+.wp_teamImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.wp_teamMember:hover .wp_teamImage img {
+    transform: scale(1.1);
+}
+
+.wp_teamInfo {
+    padding: 20px;
+}
+
+.wp_teamInfo h3 {
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.wp_teamRole {
+    color: var(--accent-color);
+    font-weight: 500;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.wp_teamBio {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Достижения секция */
+.wp_achievementsSection {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.wp_achievementsList {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.wp_achievementItem {
+    display: flex;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.wp_achievementItem::before {
+    content: '';
+    position: absolute;
+    left: 60px;
+    top: 0;
+    bottom: -40px;
+    width: 2px;
+    background-color: var(--accent-color);
+    opacity: 0.3;
+}
+
+.wp_achievementItem:last-child::before {
+    display: none;
+}
+
+.wp_achievementYear {
+    flex: 0 0 120px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent-color);
+}
+
+.wp_achievementInfo {
+    flex: 1;
+}
+
+.wp_achievementInfo h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.wp_achievementInfo p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Помещения секция */
+.wp_facilitiesSection {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.wp_facilitiesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.wp_facilityItem {
+    background-color: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.wp_facilityItem:hover {
+    transform: translateY(-10px);
+}
+
+.wp_facilityImage {
+    height: 200px;
+    overflow: hidden;
+}
+
+.wp_facilityImage img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.wp_facilityItem:hover .wp_facilityImage img {
+    transform: scale(1.1);
+}
+
+.wp_facilityInfo {
+    padding: 20px;
+}
+
+.wp_facilityInfo h3 {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    font-size: 1.3rem;
+}
+
+.wp_facilityInfo p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Присоединиться секция */
+.wp_joinSection {
+    padding: 100px 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('../img/16.webp') no-repeat center/cover;
+    color: white;
+    text-align: center;
+}
+
+.wp_joinContent {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.wp_joinContent h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.wp_joinContent p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.wp_joinButton {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.wp_joinButton:hover {
+    background-color: #e67e22;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Адаптивность */
+@media screen and (max-width: 992px) {
+    .wp_historyContent,
+    .wp_missionContent {
+        flex-direction: column;
+    }
+
+    .wp_historyImage,
+    .wp_missionImage {
+        order: 1;
+    }
+
+    .wp_historyText,
+    .wp_missionText {
+        order: 2;
+    }
+
+    .wp_achievementYear {
+        flex: 0 0 80px;
+        font-size: 1.5rem;
+    }
+
+    .wp_achievementItem::before {
+        left: 40px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wp_innerHeroSection {
+        height: 40vh;
+    }
+
+    .wp_teamGrid,
+    .wp_facilitiesGrid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .wp_joinContent h2 {
+        font-size: 2rem;
+    }
+
+    .wp_joinContent p {
+        font-size: 1.1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .wp_achievementItem {
+        flex-direction: column;
+    }
+
+    .wp_achievementYear {
+        margin-bottom: 10px;
+    }
+
+    .wp_achievementItem::before {
+        display: none;
+    }
+}
+
+
+/* Дополнительные стили для страницы "Политика конфиденциальности" */
+
+/* Hero секция для страницы политики конфиденциальности */
+.wp_privacyHero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('../img/7.webp') no-repeat center/cover;
+}
+
+/* Секция политики конфиденциальности */
+.wp_privacySection {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.wp_privacyContent {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 40px;
+}
+
+.wp_privacyLastUpdate {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.wp_privacyBlock {
+    margin-bottom: 40px;
+}
+
+.wp_privacyBlock h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.wp_privacyBlock p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.wp_privacyBlock ul {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.wp_privacyBlock ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 15px;
+    line-height: 1.6;
+}
+
+.wp_privacyBlock ul li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.wp_privacyContact {
+    background-color: var(--bg-light);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-top: 15px;
+}
+
+.wp_privacyContact p {
+    margin-bottom: 10px;
+}
+
+.wp_privacyContact p:last-child {
+    margin-bottom: 0;
+}
+
+.wp_privacyContact strong {
+    color: var(--primary-color);
+}
+
+/* Адаптивность */
+@media screen and (max-width: 768px) {
+    .wp_privacyContent {
+        padding: 30px 20px;
+    }
+
+    .wp_privacyBlock h3 {
+        font-size: 1.3rem;
+    }
+
+    .wp_privacyBlock p,
+    .wp_privacyBlock ul li {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .wp_privacySection {
+        padding: 50px 0;
+    }
+
+    .wp_privacyContent {
+        padding: 25px 15px;
+    }
+
+    .wp_privacyBlock {
+        margin-bottom: 30px;
+    }
+
+    .wp_privacyBlock h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Дополнительные стили для страницы "Cookies политика" */
+
+/* Hero секция для страницы cookies */
+.wp_cookiesHero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('../img/8.webp') no-repeat center/cover;
+}
+
+/* Секция cookies */
+.wp_cookiesSection {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.wp_cookiesContent {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 40px;
+}
+
+.wp_cookiesLastUpdate {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.wp_cookiesBlock {
+    margin-bottom: 40px;
+}
+
+.wp_cookiesBlock h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.wp_cookiesBlock p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.wp_cookiesBlock ul {
+    margin-bottom: 15px;
+    padding-left: 20px;
+}
+
+.wp_cookiesBlock ul li {
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 15px;
+    line-height: 1.6;
+}
+
+.wp_cookiesBlock ul li::before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.wp_cookiesBlock ul li a {
+    color: var(--accent-color);
+    transition: color 0.3s ease;
+}
+
+.wp_cookiesBlock ul li a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.wp_cookiesContact {
+    background-color: var(--bg-light);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    margin-top: 15px;
+}
+
+.wp_cookiesContact p {
+    margin-bottom: 10px;
+}
+
+.wp_cookiesContact p:last-child {
+    margin-bottom: 0;
+}
+
+.wp_cookiesContact strong {
+    color: var(--primary-color);
+}
+
+/* Таблица cookies */
+.wp_cookiesTable {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.wp_cookiesTableHeader {
+    display: flex;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.wp_cookiesTableRow {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+.wp_cookiesTableRow:last-child {
+    border-bottom: none;
+}
+
+.wp_cookiesTableRow:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.wp_cookiesTableCell {
+    padding: 12px 15px;
+    line-height: 1.5;
+}
+
+.wp_cookiesTableHeader .wp_cookiesTableCell {
+    padding: 15px;
+    font-weight: 500;
+}
+
+.wp_cookiesTableCell:nth-child(1) {
+    flex: 0 0 20%;
+}
+
+.wp_cookiesTableCell:nth-child(2) {
+    flex: 1;
+}
+
+.wp_cookiesTableCell:nth-child(3) {
+    flex: 0 0 20%;
+    text-align: center;
+}
+
+/* Адаптивность */
+@media screen and (max-width: 992px) {
+    .wp_cookiesTableCell:nth-child(1) {
+        flex: 0 0 25%;
+    }
+
+    .wp_cookiesTableCell:nth-child(3) {
+        flex: 0 0 25%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wp_cookiesContent {
+        padding: 30px 20px;
+    }
+
+    .wp_cookiesBlock h3 {
+        font-size: 1.3rem;
+    }
+
+    .wp_cookiesBlock p,
+    .wp_cookiesBlock ul li {
+        font-size: 1rem;
+    }
+
+    .wp_cookiesTable {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .wp_cookiesTableHeader,
+    .wp_cookiesTableRow {
+        display: block;
+        width: 100%;
+    }
+
+    .wp_cookiesTableCell {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .wp_cookiesTableCell:nth-child(1),
+    .wp_cookiesTableCell:nth-child(2),
+    .wp_cookiesTableCell:nth-child(3) {
+        flex: none;
+        width: 100%;
+        text-align: left;
+    }
+
+    .wp_cookiesTableHeader .wp_cookiesTableCell {
+        background-color: var(--primary-color);
+    }
+
+    .wp_cookiesTableRow .wp_cookiesTableCell:first-child {
+        font-weight: bold;
+        background-color: #f2f2f2;
+    }
+
+    .wp_cookiesTableRow {
+        border-bottom: 15px solid var(--bg-light);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .wp_cookiesSection {
+        padding: 50px 0;
+    }
+
+    .wp_cookiesContent {
+        padding: 25px 15px;
+    }
+
+    .wp_cookiesBlock {
+        margin-bottom: 30px;
+    }
+
+    .wp_cookiesBlock h3 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Стили для страницы "Спасибо" */
+
+.wp_thankYouSection {
+    padding: 80px 0;
+    min-height: calc(100vh - 400px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-light);
+}
+
+.wp_thankYouContainer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.wp_thankYouContent {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 50px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.wp_thankYouContent::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: var(--accent-color);
+}
+
+.wp_thankYouIcon {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(243, 156, 18, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    color: var(--accent-color);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(243, 156, 18, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(243, 156, 18, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(243, 156, 18, 0);
+    }
+}
+
+.wp_thankYouContent h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.wp_thankYouMessage {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp_thankYouDetails {
+    margin: 40px 0;
+    padding: 30px;
+    background-color: var(--bg-light);
+    border-radius: var(--border-radius);
+    text-align: left;
+}
+
+.wp_thankYouDetails h3 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.wp_thankYouContact {
+    margin-top: 15px;
+}
+
+.wp_thankYouContact p {
+    margin-bottom: 10px;
+}
+
+.wp_thankYouContact strong {
+    color: var(--primary-color);
+}
+
+.wp_thankYouActions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.wp_thankYouButton {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.wp_homePage {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.wp_homePage:hover {
+    background-color: #e67e22;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.wp_secondary {
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.wp_secondary:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Адаптивные стили */
+@media screen and (max-width: 768px) {
+    .wp_thankYouSection {
+        padding: 60px 0;
+    }
+
+    .wp_thankYouContent {
+        padding: 30px;
+    }
+
+    .wp_thankYouIcon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .wp_thankYouContent h2 {
+        font-size: 2rem;
+    }
+
+    .wp_thankYouMessage {
+        font-size: 1.1rem;
+    }
+
+    .wp_thankYouDetails {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .wp_thankYouSection {
+        padding: 40px 0;
+    }
+
+    .wp_thankYouContent {
+        padding: 25px 15px;
+    }
+
+    .wp_thankYouIcon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+    }
+
+    .wp_thankYouContent h2 {
+        font-size: 1.8rem;
+    }
+
+    .wp_thankYouMessage {
+        font-size: 1rem;
+    }
+
+    .wp_thankYouActions {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .wp_thankYouButton {
+        width: 100%;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 992px) {
+    .wp_sectionTitle {
+        font-size: 2.2rem;
+    }
+
+    .wp_heroContent h2 {
+        font-size: 2.8rem;
+    }
+
+    .wp_gameInfoImage {
+        order: 2;
+    }
+
+    .wp_gameInfoText {
+        order: 1;
+    }
+
+    .wp_aboutContent,
+    .wp_gameInfoContent {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wp_navbarCollapse {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: var(--primary-color);
+        flex-direction: column;
+        width: 250px;
+        padding: 20px;
+        gap: 15px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        box-shadow: var(--shadow);
+    }
+
+    .wp_navbarCollapse.wp_show {
+        transform: translateX(0);
+    }
+
+    .wp_navbarToggler {
+        display: block;
+    }
+
+    .wp_heroContent h2 {
+        font-size: 2.2rem;
+    }
+
+    .wp_heroContent p {
+        font-size: 1.1rem;
+    }
+
+    .wp_sectionTitle {
+        font-size: 2rem;
+    }
+
+    .wp_testimonialItem {
+        padding: 20px;
+    }
+
+    .wp_gameStats {
+        flex-direction: column;
+    }
+}
